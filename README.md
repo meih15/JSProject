@@ -25,7 +25,7 @@ In addition, this project includes:
 - Options to play different Asian music
 
 ## Wireframes
-![wireframe](wireframe.png)
+![wireframe](./assets/introduction/wireframe.jpg)
 
 ## Technologies, Libraries, APIs
 - Javascript
