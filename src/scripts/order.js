@@ -27,14 +27,12 @@ const TOPPING_CHOICES = {
 
 
 class Order {
-    constructor(numSeconds) {
+    constructor() {
         this.order = [];
-        this.numSeconds = numSeconds;
         this.numToppings = Math.floor(Math.random() * 5);
         this.boba = [];
 
         this.generateOrder();
-        this.renderOrder();
         this.generateBoba();
     }
 
@@ -62,6 +60,12 @@ class Order {
             let chosenToppings = getRandomIdx(toppingsPicked.length);
             this.order.push(toppingsPicked[chosenToppings]);
         }
+
+        this.renderOrder();
+    }
+
+    renderOrder() {
+        
     }
 
     generateBoba() {
@@ -81,6 +85,6 @@ class Order {
     }
 
     renderBoba() {
-        
+
     }
 }
