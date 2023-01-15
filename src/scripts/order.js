@@ -1,29 +1,86 @@
 const DRINK_SIZES = {
     //list of drink sizes
-}
+    "small": "",
+    "medium": "",
+    "large": ""
+};
 
-const TEA_CHOICES = {
+const MILK_TEA_CHOICES = {
     //list of teas
-}
+    "oolong": "",
+    "earl-gray": "",
+    "matcha": "",
+    "taro": "",
+    "tiramisu": "",
+    "jasmine": ""
+};
 
 const TOPPING_CHOICES = {
     //list of toppings
-}
+    "tapioca": "",
+    "aloe": "",
+    "rainbow-jelly": "",
+    "pudding": "",
+    "herbal-jelly": "",
+    "red-bean": "",
+};
+
 
 class Order {
-    constructor(drinkSize, tea, numToppings, numSeconds){
-        this.drinkSize = drinkSize;
-        this.tea = tea;
-        this.numToppings = this.numToppings;
+    constructor(numSeconds) {
         this.order = [];
-        this.numSeconds = this.numSeconds;
+        this.numSeconds = numSeconds;
+        this.numToppings = Math.floor(Math.random() * 5);
+        this.boba = [];
 
         this.generateOrder();
+        this.renderOrder();
+        this.generateBoba();
     }
 
     generateOrder() {
         //drink size be order[0]
         //drink tea be order[1]
         //array length changes based on how many toppings for the order
+
+        let sizePicked = Object.keys(DRINK_SIZES);
+        let teaPicked = Object.keys(MILK_TEA_CHOICES);
+        let toppingsPicked = Object.keys(TOPPING_CHOICES);
+
+        function getRandomIdx(max) {
+            return Math.floor(Math.random() * max);
+        };
+
+        let chosenSize = getRandomIdx(sizePicked.length);
+        this.order.push(sizePicked[chosenSize]);
+
+        let chosenTea = getRandomIdx(teaPicked.length);
+        this.order.push(teaPicked[chosenTea]);
+
+        //let numToppings = getRandomIdx(5)
+        for (let i = 0; i < this.numToppings; i++) {
+            let chosenToppings = getRandomIdx(toppingsPicked.length);
+            this.order.push(toppingsPicked[chosenToppings]);
+        }
+    }
+
+    generateBoba() {
+
+    }
+
+    deleteBoba(){}
+
+    addItem(item) {
+        this.boba.push(item);
+        this.renderBoba();
+    }
+
+    removeItem() {
+        this.boba.pop();
+        this.renderBoba();
+    }
+
+    renderBoba() {
+        
     }
 }

@@ -1,6 +1,7 @@
 class Game {
     constructor() {
-    
-        this.order = new this.order();
+        this.menu = new Menu();
+        this.customer = new Customer();
+        this.order = new Order();
     }
 }
