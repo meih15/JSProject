@@ -1,30 +1,4 @@
-const DRINK_SIZES = {
-    //list of drink sizes
-    "small": "",
-    "medium": "",
-    "large": ""
-};
-
-const MILK_TEA_CHOICES = {
-    //list of teas
-    "oolong": "",
-    "earl-gray": "",
-    "matcha": "",
-    "taro": "",
-    "tiramisu": "",
-    "jasmine": ""
-};
-
-const TOPPING_CHOICES = {
-    //list of toppings
-    "tapioca": "",
-    "aloe": "",
-    "rainbow-jelly": "",
-    "pudding": "",
-    "herbal-jelly": "",
-    "red-bean": "",
-};
-
+import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "../styles/constants";
 
 class Order {
     constructor(numSeconds) {
@@ -159,6 +133,5 @@ class Order {
     }
 }
 
-
-
+export default Order;
 //can DRY code 

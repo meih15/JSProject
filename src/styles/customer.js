@@ -1,14 +1,4 @@
-const { custom } = require("babel-loader");
-//line got automatically added, what is this
-
-const NEW_CUSTOMER = {
-    0: "",
-    1: "",
-    2: "",
-    3: "",
-    4: "",
-    5: ""
-}
+import { NEW_CUSTOMER } from "./constants";
 
 class Customer {
     constructor () {
@@ -34,3 +24,5 @@ class Customer {
         textContainer.appendChild(textBox);
     }
 }
+
+export default Customer;

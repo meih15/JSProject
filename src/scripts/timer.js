@@ -37,3 +37,5 @@ class Timer {
         document.getElementById("timer").remove();
     }
 }
+
+export default Timer;

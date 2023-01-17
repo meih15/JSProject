@@ -1,3 +1,9 @@
+import Menu from "./menu";
+import Customer from "../styles/customer";
+import Order from "./order";
+import Timer from "./timer";
+import View from "../styles/view";
+
 class Game {
     constructor() {
         this.menu = new Menu();
@@ -8,23 +14,21 @@ class Game {
         this.totalScore = 0;
         this.customerLost = 0;
         this.numCustomer = 0;
-
-        
-        // this.handleClickonMenuElements = this.handleClickonMenuElements.bind(this);
-        // this.handleClickonRemove = this.handleClickonRemove.bind(this);
-        // this.checkTotalCustomers = this.checkTotalCustomers.bind(this);
-        this.start = this.start.bind(this);
-
-        document.addEventListener('keydown', this.handleClick.bind(this));
-        document.addEventListener('keyup', this.handleRemoveClick.bind(this));
-
+    
+        this.gameStart = this.gameStart.bind(this);
+        this.addEventListeneronWindow = this.addEventListeneronWindow.bind(this);
         this.removeListenerOnWindow = this.removeListenerOnWindow.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.handleClickonMenuElements = this.handleClickonMenuElements.bind(this);
+        this.handleClickonRemove = this.handleClickonRemove(this);
+        this.checkTotalCustomers = this.checkTotalCustomers.bind(this);
+        this.gameStart = this.gameStart.bind();
 
         this.renderScore();
     }
 
-    start() {
-        this.addListenerOnWindow();
+    gameStart() {
+        this.addEventListenerOnWindow();
         this.handleClickonMenuElements();
         this.handleClickonRemove();
         this.startTimer();
@@ -56,9 +60,6 @@ class Game {
         }
     }
 
-    checkTotalCustomers(){}  //a check for total customers
-
-    //a function to keep track of total customers past
 
     handleKeyPress(event) {
         let key = event.key;
@@ -87,6 +88,11 @@ class Game {
         if (!element) return;
 
         element.classList.remove('hover')
+    }
+
+    addEventListeneronWindow() {
+        window.addEventListener('keydown', this.handleKeyPress);
+        window.addEventListener('keyup', this.handleRemoveKeyPress);
     }
 
     removeListenerOnWindow() {
@@ -129,15 +135,8 @@ class Game {
     }
 
     timerStart() {
-        let timer = document.querySelector('#timer');
-        if (!timer) {
-            timer = document.createElement('div');
-            timer.id = 'timer';
-            timer.innerHTML = this.timer.count;
-            document.querySelector('#timer-container').appendChild(timer);
-        }
-        
         this.timer.start();
+        View.renderTimer(this.timer.count);
     }
 
     roundStatus() {
@@ -181,7 +180,13 @@ class Game {
     }
 
     correctBoba() {
-
+        let isCorrect = true;
+        this.order.order.forEach((item, idx) => {
+            if(this.order.boba[idx] !== item) {
+                isCorrect = false;
+            }
+        })
+        return isCorrect;
     }
 
 
@@ -190,15 +195,31 @@ class Game {
     }
 
     restart() {
+        document.querySelector('#customer-lost')
+        document.querySelector('#score').innerHTML = '';
+        document.querySelector('#timer-container').innerHTML = '';
+        this.order.deleteOrder();
+        this.order.deleteBoba();
+        this.score = 0;
+        this.customerLost = 0;
+        this.numCustomer = 0;
+        this.renderScore();
 
+        this.querySelector('#modal').classList.add('hidden');
+        this.addEventListenerWindow();
+        this.newGameRound();
     }
 
     renderScore() {
-        
+        View.renderScore();
+    }
+
+    renderCustomerLost () {
+        View.renderLostCustomers(this.customerLost);
     }
 
     renderGameOverMessage() {
-
+        View.renderGameOverMessage(this.score);
     }
 
 
