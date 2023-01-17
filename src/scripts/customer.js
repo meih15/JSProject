@@ -30,7 +30,7 @@ class Customer {
         let textContainer = document.getElementById("text-container");
         let textBox = document.createElement("div");
         textBox.classList.add("text-box");
-        textBox.classList.add("fadeIn");
+        textBox.classList.add("visual-effect");
         textContainer.appendChild(textBox);
     }
 }
