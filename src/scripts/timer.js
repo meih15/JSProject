@@ -7,12 +7,18 @@ class Timer {
     }
 
     start() {
-        clearInterval(this.interval)
+        if (this.interval) {
+            clearInterval(this.interval)
+        }
         this.timeLeft = this.roundTime;
         this.interval = setInterval(() => this.countDown(), 1000);
     }
 
-    stop() {clearInterval(this.interval);}
+    stop() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    }
 
     countDown() {
         if (this.timeLeft === 0) {

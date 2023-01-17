@@ -68,6 +68,11 @@ class Order {
         
     }
 
+    deleteOrder() {
+        document.getElementById("customer-container").innerHTML = '';
+        document.getElementById("text-container").innerHTML = '';
+    }
+
     generateBoba() {
 
     }
