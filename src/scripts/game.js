@@ -3,6 +3,7 @@ import Customer from "../styles/customer";
 import Order from "./order";
 import Timer from "./timer";
 import View from "../styles/view";
+import { KEY_MAP } from "../styles/constants";
 
 class Game {
     constructor() {
@@ -221,7 +222,6 @@ class Game {
     renderGameOverMessage() {
         View.renderGameOverMessage(this.score);
     }
-
-
-
 }
+
+export default Game;

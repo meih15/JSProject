@@ -1,4 +1,5 @@
 import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "../styles/constants";
+import View from "../styles/view";
 
 class Order {
     constructor(numSeconds) {
@@ -59,18 +60,7 @@ class Order {
     }
 
     renderOrder() {
-        let orderBox = document.createElement('div');
-        orderBox.classList.add('order-box');
-
-        this.order.forEach(ele => {
-            let orderElement = document.createElement('div');
-            orderElement.classList.add('order-element');
-            orderElement.appendChild(this.generateOrderElement(item));
-            orderBox.appendChild(orderElement);
-
-            let textContainer = document.getElementById("text-container");
-            textContainer.appendChild(orderBox);
-        })
+        View.renderOrder(this.order);
     }
 
     deleteOrder() {
@@ -108,28 +98,7 @@ class Order {
     }
 
     renderBoba() {
-        for (let i = 0; i < this.boba.length; i++) {
-            let bobaEle = document.querySelector(`.boba-element.${i}`);
-            bobaEle.innerHTML = '';
-            let element = this.boba[i];
-            if (!element) break;
-            let image = document.createElement('img');
-            
-            const drinkSizes = Object.keys(DRINK_SIZES);
-            const milkTeas = Object.keys(MILK_TEA_CHOICES);
-            const toppings = Object.keys(TOPPING_CHOICES);
-
-            if (drinkSizes.includes(element)) {
-                image.src = DRINK_SIZES[element];
-            } else if (milkTeas.includes(element)) {
-                image.src = MILK_TEA_CHOICES[element];
-            } else if (toppings.includes(element)) {
-                image.src = TOPPING_CHOICES[element];
-            };
-
-            image.alt = `${item}-image`;
-            bobaEle.appendChild(image);
-        }
+        View.renderBoba(this.boba);
     }
 }
 
