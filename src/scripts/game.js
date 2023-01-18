@@ -4,7 +4,6 @@ import Order from "./order";
 import Timer from "./timer";
 import View from "./view";
 import { KEY_MAP } from "./constants";
-import coreJs from "core-js";
 
 class Game {
     constructor() {
@@ -152,7 +151,7 @@ class Game {
 
         if (this.timer.timeLeft > 0 && correctOrder) {
          
-            this.score += 1;
+            this.totalScore += 1;
             this.numCustomer += 1;
             this.renderScore();
 
@@ -208,7 +207,7 @@ class Game {
     }
 
     restart() {
-        document.querySelector('#customer-lost').innerHTML = '';
+        document.querySelector('#lost-customer').innerHTML = '';
         document.querySelector('#score').innerHTML = '';
         document.querySelector('#timer-container').innerHTML = '';
         this.order.deleteOrder();
@@ -218,12 +217,12 @@ class Game {
         this.numCustomer = 0;
         this.renderScore();
 
-        this.querySelector('#modal').classList.add('hidden');
+        document.querySelector('#modal').classList.add('hidden');
         this.newGameRound();
     }
 
     renderScore() {
-        View.renderScore();
+        View.renderScore(this.totalScore);
     }
 
     renderCustomerLost () {
@@ -232,7 +231,7 @@ class Game {
 
     renderGameOverMessage() {
         this.removeListenerOnWindow();
-        View.renderGameOverMessage(this.score);
+        View.renderGameOverMessage(this.totalScore);
     }
 }
 

@@ -52,12 +52,12 @@ class View {
         }
     }
 
-    static renderScore() {
-        let score = document.querySelector('#score')
+    static renderScore(score) {
+        let totalScore = document.querySelector('#score')
         if (score > 1 || score === 0) {
-            score.innerHTML = `${score} orders`;
+            totalScore.innerHTML = `${score} orders`;
         } else {
-            score.innerHTML = `${score} order`;
+            totalScore.innerHTML = `${score} order`;
         }
     }
 

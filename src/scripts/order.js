@@ -95,6 +95,11 @@ class Order {
 
     removeItem() {
         if (this.boba.length) {
+            let i = this.boba.length - 1;
+
+            let bobaEle = document.querySelector(`.boba-element-${i}`);
+            bobaEle.firstElementChild.remove();
+            
             this.boba.pop();
             this.renderBoba(this.boba);
         }

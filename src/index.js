@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     document.getElementById('restart-button').addEventListener('click', () => {
-        game = null;
-        game = new Game();
+        //game = null;
+        //game = new Game();
         game.restart();
-        game.gameStart();
+        //game.gameStart();
     })
 
 })
