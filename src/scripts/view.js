@@ -2,14 +2,14 @@ import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "./constants";
 
 class View {
 
-    static renderOrder(order){
+    static renderOrder(obj){
         let orderBox = document.createElement('div');
         orderBox.classList.add('order-box');
 
-        order.forEach(ele => {
+        obj.order.forEach(ele => {
             let orderElement = document.createElement('div');
             orderElement.classList.add('order-element');
-            orderElement.appendChild(this.generateOrderElement(ele));
+            orderElement.appendChild(obj.generateOrderElement(ele));
             orderBox.appendChild(orderElement);
 
             let textContainer = document.getElementById("text-container");
@@ -19,7 +19,7 @@ class View {
 
     static renderBoba(boba) {
         for (let i = 0; i < boba.length; i++) {
-            let bobaEle = document.querySelector(`.boba-element.${i}`);
+            let bobaEle = document.querySelector(`.boba-element-${i}`);
             bobaEle.innerHTML = '';
             let element = boba[i];
             if (!element) break;
@@ -73,7 +73,6 @@ class View {
 
     static renderGameOverMessage(totalScore) {
         const score = totalScore;
-        this.removeListenerOnWindow();
         
         let msg = document.querySelector('.message');
         if (score > 1 || score === 0) {

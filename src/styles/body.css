@@ -62,6 +62,14 @@
     z-index: 10;
 }
 
+#controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
 #menu {
     width: 363px;
     height: 161px;

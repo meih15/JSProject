@@ -4,35 +4,40 @@ import Order from "./order";
 import Timer from "./timer";
 import View from "./view";
 import { KEY_MAP } from "./constants";
+import coreJs from "core-js";
 
 class Game {
     constructor() {
         this.menu = new Menu();
         this.customer = new Customer();
-        this.order = new Order(numSeconds);
+        this.numSeconds = 20;
+        this.order = new Order(this.numSeconds);
         this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
 
+    
         this.totalScore = 0;
         this.customerLost = 0;
         this.numCustomer = 0;
     
         this.gameStart = this.gameStart.bind(this);
-        this.addEventListeneronWindow = this.addEventListeneronWindow.bind(this);
+
         this.removeListenerOnWindow = this.removeListenerOnWindow.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleClickonMenuElements = this.handleClickonMenuElements.bind(this);
-        this.handleClickonRemoveButton = this.handleClickonRemove(this);
+        this.handleClickonRemoveButton = this.handleClickonRemoveButton.bind(this);
         this.checkTotalCustomers = this.checkTotalCustomers.bind(this);
         this.gameStart = this.gameStart.bind(this);
 
         this.renderScore();
+
+        addEventListener('keydown', this.handleKeyPress);
+        addEventListener('keyup', this.handleRemoveKeyPress);
     }
 
     gameStart() {
-        this.addEventListenerOnWindow();
         this.handleClickonMenuElements();
         this.handleClickonRemoveButton();
-        this.startTimer();
+        this.timerStart();
     }
 
     checkTotalCustomers() {
@@ -40,25 +45,27 @@ class Game {
     }
 
     roundDifficulty () {
+        this.order = null;
         if (this.checkTotalCustomers() >= 0) {
-            return new Order(20);
+            this.numSeconds = 20
         } else if (this.checkTotalCustomers() >= 5) {
-            return new Order(15);
+            this.numSeconds = 15
         } else if (this.checkTotalCustomers() >= 10) {
-            return new Order(10);
+            this.numSeconds = 10
         } else if (this.checkTotalCustomers() >= 15) {
-            return new Order(8);
+            this.numSeconds = 8
         } else if (this.checkTotalCustomers() >= 25) {
-            return new Order(6);
+            this.numSeconds = 6
         } else if (this.checkTotalCustomers() >= 40) {
-            return new Order(8);
+            this.numSeconds = 5
         } else if (this.checkTotalCustomers() >= 60) {
-            return new Order(6);
+            this.numSeconds = 4
         } else if (this.checkTotalCustomers() >= 80) {
-            return new Order(4);
+            this.numSeconds = 3
         } else if (this.checkTotalCustomers() >= 100) {
-            return new Order(2);
+            this.numSeconds = 2
         }
+        return new Order(this.numSeconds);
     }
 
 
@@ -76,7 +83,7 @@ class Game {
         if (!element) return;
 
         //element.classList.add('hover') add effect
-        this.boba.addItem(elementId);
+        this.order.addItem(elementId);
         this.roundStatus();
     }
 
@@ -91,21 +98,16 @@ class Game {
         //element.classList.remove('hover') add effect
     }
 
-    addEventListeneronWindow() {
-        window.addEventListener('keydown', this.handleKeyPress);
-        window.addEventListener('keyup', this.handleRemoveKeyPress);
-    }
-
     removeListenerOnWindow() {
         window.removeEventListener('keydown', this.handleKeyPress);
         window.removeEventListener('keyup', this.handleRemoveKeyPress);
     }
 
     handleClickonMenuElements() {
-        let menuCupSize = Array.from(document.querySelectorAll('.cup-size'));
+        let menuCupSize = Array.from(document.querySelectorAll('.cup-sizes'));
         menuCupSize.forEach(item => {
             item.addEventListener('click', () => {
-                this.boba.addItem(item.id);
+                this.order.addItem(item.id);
                 this.roundStatus();
             })
         })
@@ -113,7 +115,7 @@ class Game {
         let menuTeas = Array.from(document.querySelectorAll('.tea-choice'));
         menuTeas.forEach(item => {
             item.addEventListener('click', () => {
-                this.boba.addItem(item.id);
+                this.order.addItem(item.id);
                 this.roundStatus();
             })
         })
@@ -121,17 +123,17 @@ class Game {
         let menuToppings = Array.from(document.querySelectorAll('.topping-choice'));
         menuToppings.forEach(item => {
             item.addEventListener('click', () => {
-                this.boba.addItem(item.id);
+                this.order.addItem(item.id);
                 this.roundStatus();
             })
         })
     }
 
     handleClickonRemoveButton() {
-        let button = document.querySelector('#remove-button');
+        let button = document.getElementById('remove-button');
         button.addEventListener('click', () => {
-            this.boba.removeItem();
-            this.roundStatus();
+            this.order.removeItem();
+            //this.roundStatus();
         })
     }
 
@@ -145,8 +147,11 @@ class Game {
             this.renderGameOverMessage();
             return;
         }
+        const correctOrder = this.correctBoba();
 
-        if (this.timer.count > 0 && this.correctBoba()) {
+
+        if (this.timer.timeLeft > 0 && correctOrder) {
+         
             this.score += 1;
             this.numCustomer += 1;
             this.renderScore();
@@ -154,9 +159,11 @@ class Game {
             this.resetGameRound();
             this.newGameRound();
 
-        } else if (this.timer === 0 && !this.correctBoba()) {
-            this.customerLost -= 1;
-            if (this.gameOver()){
+        } else if (this.timer.timeLeft === 0 && !correctOrder) {
+       
+            this.customerLost += 1;
+            this.numCustomer += 1;
+            if (this.gameOver()) {
                 this.renderGameOverMessage();
                 this.timer.stop();
                 return;
@@ -172,21 +179,26 @@ class Game {
         this.order.deleteOrder();
         this.timer.stop();
         this.timer.removeTimer();
+        //this.customer = null;
     }
 
     newGameRound() {
         this.order = this.roundDifficulty();
-        this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
-        this.startTimer();
+        this.timer = new Timer(this.numSeconds, this.roundStatus.bind(this));
+        this.customer = new Customer();
+        this.timerStart();
     }
 
     correctBoba() {
+    
         let isCorrect = true;
         this.order.order.forEach((item, idx) => {
             if(this.order.boba[idx] !== item) {
+            
                 isCorrect = false;
             }
         })
+
         return isCorrect;
     }
 
@@ -207,7 +219,6 @@ class Game {
         this.renderScore();
 
         this.querySelector('#modal').classList.add('hidden');
-        this.addEventListenerWindow();
         this.newGameRound();
     }
 
@@ -220,6 +231,7 @@ class Game {
     }
 
     renderGameOverMessage() {
+        this.removeListenerOnWindow();
         View.renderGameOverMessage(this.score);
     }
 }

@@ -60,7 +60,7 @@ class Order {
     }
 
     renderOrder() {
-        View.renderOrder(this.order);
+        View.renderOrder(this);
     }
 
     deleteOrder() {
@@ -75,8 +75,7 @@ class Order {
 
         for (let i = 0; i < this.order.length; i++ ) {
             let bobaElement = document.createElement("div");
-            bobaElement.classList.add('boba-element');
-            bobaElement.classList.add(`${i}`);
+            bobaElement.classList.add(`boba-element-${i}`);
             boba.appendChild(bobaElement);
         }
 
@@ -88,13 +87,17 @@ class Order {
     }
 
     addItem(item) {
-        this.boba.push(item);
-        this.renderBoba();
+        if (this.boba.length < this.order.length) {
+            this.boba.push(item);
+            this.renderBoba(this.boba);
+        }
     }
 
     removeItem() {
-        this.boba.pop();
-        this.renderBoba();
+        if (this.boba.length) {
+            this.boba.pop();
+            this.renderBoba(this.boba);
+        }
     }
 
     renderBoba() {
