@@ -1,5 +1,5 @@
-import MenuItem from "../styles/menuItem";
-import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "../styles/constants";
+import MenuItem from "./menuItem";
+import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "./constants";
 
 class Menu {
     constructor() {
@@ -8,7 +8,7 @@ class Menu {
     }
 
     generateMenu() {
-        let cupSizes = document.querySelectorAll('.cup-size');
+        let cupSizes = document.querySelectorAll('.cup-sizes');
             cupSizes.forEach(size => {
                 let sizeId = size.id;
                 let menuItem = new MenuItem(sizeId, DRINK_SIZES[sizeId]);

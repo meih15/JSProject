@@ -1,0 +1,43 @@
+#main-interaction-container {
+    height: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#customer-container {
+    width: 280px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#customer-container>img {
+    height: 100%;
+    width: auto;
+}
+
+#text-container {
+    width: 275px;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.order-element {
+    width: 45px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-element>img {
+    width: 100%;
+    height: 100%;
+}

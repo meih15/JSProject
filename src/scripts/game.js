@@ -1,16 +1,16 @@
 import Menu from "./menu";
-import Customer from "../styles/customer";
+import Customer from "./customer";
 import Order from "./order";
 import Timer from "./timer";
-import View from "../styles/view";
-import { KEY_MAP } from "../styles/constants";
+import View from "./view";
+import { KEY_MAP } from "./constants";
 
 class Game {
     constructor() {
         this.menu = new Menu();
         this.customer = new Customer();
         this.order = new Order(numSeconds);
-        this.timer = new Timer(this.order.numSeconds, )
+        this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
 
         this.totalScore = 0;
         this.customerLost = 0;
@@ -21,9 +21,9 @@ class Game {
         this.removeListenerOnWindow = this.removeListenerOnWindow.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleClickonMenuElements = this.handleClickonMenuElements.bind(this);
-        this.handleClickonRemove = this.handleClickonRemove(this);
+        this.handleClickonRemoveButton = this.handleClickonRemove(this);
         this.checkTotalCustomers = this.checkTotalCustomers.bind(this);
-        this.gameStart = this.gameStart.bind();
+        this.gameStart = this.gameStart.bind(this);
 
         this.renderScore();
     }
@@ -31,7 +31,7 @@ class Game {
     gameStart() {
         this.addEventListenerOnWindow();
         this.handleClickonMenuElements();
-        this.handleClickonRemove();
+        this.handleClickonRemoveButton();
         this.startTimer();
     }
 
@@ -75,7 +75,7 @@ class Game {
         let element = document.getElementById(elementId);
         if (!element) return;
 
-        element.classList.add('hover')
+        //element.classList.add('hover') add effect
         this.boba.addItem(elementId);
         this.roundStatus();
     }
@@ -88,7 +88,7 @@ class Game {
         let element = document.getElementById(elementId);
         if (!element) return;
 
-        element.classList.remove('hover')
+        //element.classList.remove('hover') add effect
     }
 
     addEventListeneronWindow() {
@@ -127,7 +127,7 @@ class Game {
         })
     }
 
-    handleClickonRemove() {
+    handleClickonRemoveButton() {
         let button = document.querySelector('#remove-button');
         button.addEventListener('click', () => {
             this.boba.removeItem();
@@ -196,7 +196,7 @@ class Game {
     }
 
     restart() {
-        document.querySelector('#customer-lost')
+        document.querySelector('#customer-lost').innerHTML = '';
         document.querySelector('#score').innerHTML = '';
         document.querySelector('#timer-container').innerHTML = '';
         this.order.deleteOrder();

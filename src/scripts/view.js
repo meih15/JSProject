@@ -1,4 +1,4 @@
-import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "../styles/constants";
+import { DRINK_SIZES, MILK_TEA_CHOICES, TOPPING_CHOICES} from "./constants";
 
 class View {
 

@@ -43,12 +43,12 @@ export const KEY_MAP = {
     "s": "ginger",
     "d": "matcha",
     "f": "jasmine",
-    "c": "white",
-    "v": "black",
+    "g": "white",
+    "h": "black",
 
     "j": "tapioca",
     "k": "aloe",
-    "l": "rainbow-jelly",
+    "l": "white-pearls",
     ";": "pudding",
     "n": "herbal-jelly",
     "m": "red-bean"

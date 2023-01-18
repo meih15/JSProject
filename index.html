@@ -7,11 +7,83 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Project Name</title>
+    <title>bobabreak</title>
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="introduction">
+        <div id="introduction-contents">
+            <h1 class="small-title"></h1>
+            <div id="description">
+                <p>bobabreak is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in
+                    the bustling city of Los Angeles. Hone your barista skills as you take orders and serve customers the drink of
+                    their
+                    dreams!</p>
+            <div id="instructions">
+                <p>bobabreak is a tea-themed food matching game. The player will take on the role of the barista that makes the bubble
+                tea orders to serve the correct drink to the customer. Players can use the keyboard or mouse to select components of the
+                drink. Players will have to choose the right cup-size, tea, and the toppings in order to pass the round. The time
+                allotted for each drink order will decrease after a certain amount of customers to increase difficulty over the course
+                of gameplay. The player will be given three lives. A wrong order or order not completed in time will result in a
+                customer lost, aka life lost. Losing all three lives will result in a game over.</p>
+            </div>
+
+            </div>
+            <button id="start-button">START</button>
+        </div>
+    </div>
+    <div id="modal" class="hidden">
+        <div class="modal-screen"></div>
+        <div class="modal content">
+            <div class="message"></div>
+            <button id="restart-button">REPLAY</button>
+        </div>
+    </div>
+
+    <h1 class="game-title">bobabreak</h1>
+    <main class="main-content">
+        <div id="game-canvas">
+            <div id="top-bar">
+                <div id="timer-container"></div>
+                <div id="score">0 Orders</div>
+                <div id="lost-customer"></div>
+            </div>
+            <div id="main-interaction-container">
+                <div id="main-interaction">
+                    <div id="text-container"></div>
+                    <div id="customer-container"></div>
+                </div>
+            </div>
+            <div id="counter">
+                <div id="boba-container"></div>
+                <button id="remove-button">Remove</button>
+                <div id="menu">
+                    <div class="menu-first-row">
+                        <div id="small" class="cup-sizes"></div>
+                        <div id="medium" class="cup-sizes"></div>
+                        <div id="large" class="cup-sizes"></div>
+                    </div>
+                    <div class="menu-second-row">
+                        <div id="oolong" class="tea-choice"></div>
+                        <div id="ginger" class="tea-choice"></div>
+                        <div id="matcha" class="tea-choice"></div>
+                        <div id="jasmine" class="tea-choice"></div>
+                        <div id="white" class="tea-choice"></div>
+                        <div id="black" class="tea-choice"></div>
+                    </div>
+                    <div class="menu-third-row">
+                        <div id="tapioca" class="topping-choice"></div>
+                        <div id="aloe" class="topping-choice"></div>
+                        <div id="white-pearls" class="topping-choice"></div>
+                        <div id="pudding" class="topping-choice"></div>
+                        <div id="herbal-jelly" class="topping-choice"></div>
+                        <div id="red-bean" class="topping-choice"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
 </body>
 
 </html>
