@@ -11,6 +11,15 @@
     padding-bottom: 25px;
 }
 
+body {
+    min-height: 100%;
+    background-image: url('../assets/background/city.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Abel';
+}
+
 .main-content {
     width: 100%;
     min-height: 100%;

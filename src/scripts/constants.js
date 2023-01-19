@@ -35,22 +35,22 @@ export const TOPPING_CHOICES = {
 };
 
 export const KEY_MAP = {
-    "q": "small",
-    "w": "medium",
-    "e": "large",
+    "KeyQ": "small",
+    "KeyW": "medium",
+    "KeyE": "large",
 
-    "a": "oolong",
-    "s": "ginger",
-    "d": "matcha",
-    "f": "jasmine",
-    "g": "white",
-    "h": "black",
+    "KeyA": "oolong",
+    "KeyS": "ginger",
+    "KeyD": "matcha",
+    "KeyF": "jasmine",
+    "KeyG": "white",
+    "KeyH": "black",
 
-    "j": "tapioca",
-    "k": "aloe",
-    "l": "white-pearls",
-    ";": "pudding",
-    "n": "herbal-jelly",
-    "m": "red-bean"
+    "KeyZ": "tapioca",
+    "KeyX": "aloe",
+    "KeyC": "white-pearls",
+    "KeyV": "pudding",
+    "KeyB": "herbal-jelly",
+    "KeyN": "red-bean"
 };
 

@@ -69,13 +69,13 @@ class Game {
 
 
     handleKeyPress(event) {
-        let key = event.key;
-        if (key === 'Backspace') {
-            this.boba.removeItem();
+        event.preventDefault();
+        if (event.code === "Backspace") {
+            this.order.removeItem();
             return;
         }
 
-        let elementId = KEY_MAP[key];
+        let elementId = KEY_MAP[event.code];
         if (!elementId) return;
 
         let element = document.getElementById(elementId);
@@ -84,11 +84,12 @@ class Game {
         //element.classList.add('hover') add effect
         this.order.addItem(elementId);
         this.roundStatus();
+
     }
 
     handleRemoveKeyPress(event) {
-        let key = event.key;
-        let elementId = KEY_MAP[key];
+
+        let elementId = KEY_MAP[event.code];
         if (!elementId) return;
 
         let element = document.getElementById(elementId);
@@ -138,7 +139,7 @@ class Game {
 
     timerStart() {
         this.timer.start();
-        View.renderTimer(this.timer.count);
+        View.renderTimer(this.timer.timeLeft);
     }
 
     roundStatus() {
@@ -212,7 +213,7 @@ class Game {
         document.querySelector('#timer-container').innerHTML = '';
         this.order.deleteOrder();
         this.order.deleteBoba();
-        this.score = 0;
+        this.totalScore = 0;
         this.customerLost = 0;
         this.numCustomer = 0;
         this.renderScore();

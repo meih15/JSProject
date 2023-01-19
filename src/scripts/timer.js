@@ -18,6 +18,7 @@ class Timer {
         if (this.interval) {
             clearInterval(this.interval);
         }
+
     }
 
     countDown() {

@@ -45,4 +45,12 @@ In addition, this project includes:
 - Thursday Morning: Deploy to Github pages
 
 ## Credits
-Images and Music
+Images
+https://dribble.com/shots/8089955-Bubble-Tea (toppings)
+
+https://unblast.com/100-free-cartoon-characters-sketch-figma/
+(customers)
+
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
+
+
