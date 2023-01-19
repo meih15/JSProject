@@ -89,14 +89,26 @@ body {
     z-index: 10;
 }
 
+
 #boba-container {
-    width: 100px;
+    width: 233px;
+    height: 160px;
+}
+
+#boba {
+    width:600px;
     height: 100px;
+    background: rgba(187, 186, 186, 0.959);
+    border-radius: 8px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-} 
+    position: relative;
+}
+
+#boba > img {
+    height: 100px;
+}
 
 #controls {
     width: 100%;
@@ -123,10 +135,10 @@ body {
 }
 
 
-.tea-choice, .topping-choice {
+.cup-sizes, .tea-choice, .topping-choice {
     width: 75px;
     height: 75px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;

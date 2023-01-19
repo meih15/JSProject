@@ -76,6 +76,7 @@ class Order {
         for (let i = 0; i < this.order.length; i++ ) {
             let bobaElement = document.createElement("div");
             bobaElement.classList.add(`boba-element-${i}`);
+            bobaContainer.classList.add('img-item');
             boba.appendChild(bobaElement);
         }
 
@@ -99,7 +100,7 @@ class Order {
 
             let bobaEle = document.querySelector(`.boba-element-${i}`);
             bobaEle.firstElementChild.remove();
-            
+
             this.boba.pop();
             this.renderBoba(this.boba);
         }
