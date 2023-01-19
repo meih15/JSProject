@@ -96,7 +96,7 @@ body {
 }
 
 #boba {
-    width:600px;
+    width:555px;
     height: 100px;
     background: rgba(187, 186, 186, 0.959);
     border-radius: 8px;
@@ -107,7 +107,7 @@ body {
 }
 
 #boba > img {
-    height: 100px;
+    height: 100%;
 }
 
 #controls {
