@@ -16,7 +16,6 @@ Play **bobabreak** live [here](https://meih15.github.io/bobabreak/)
 
 In **bobabreak**, players will be able to:
 - Start a new game and restart the game
-- Mute any sounds from the game
 - Use the keyboard or mouse to select each drink's ingredients
 - Collect money for serving the correct drink to customers
 - Change their store's status once you reach a certain amount of revenue
@@ -43,6 +42,10 @@ In addition, this project includes:
 - Tuesday: Include HTML buttons functionality and music options
 - Wednesday: Finish styling, and clean up code
 - Thursday Morning: Deploy to Github pages
+
+## Future Implementations
+- Add sound to the game
+- Mute any sounds from the game
 
 ## Credits
 Images
