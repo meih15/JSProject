@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById("start-button");
 
     startButton.addEventListener('click', () => {
-        document.querySelector('#introduction').classList.add('hidden');
+        document.getElementById('introduction').style.display = "none";
         //document.querySelector('#instructions').classList.add(hide);
         game.gameStart();
     })
