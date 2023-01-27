@@ -13,9 +13,6 @@ class Order {
     }
 
     generateOrder() {
-        //drink size be order[0]
-        //drink tea be order[1]
-        //array length changes based on how many toppings for the order
 
         let sizePicked = Object.keys(DRINK_SIZES);
         let teaPicked = Object.keys(MILK_TEA_CHOICES);
@@ -31,7 +28,6 @@ class Order {
         let chosenTea = getRandomIdx(teaPicked.length);
         this.order.push(teaPicked[chosenTea]);
 
-        //let numToppings = getRandomIdx(5)
         for (let i = 0; i < this.numToppings; i++) {
             let chosenToppings = getRandomIdx(toppingsPicked.length);
             this.order.push(toppingsPicked[chosenToppings]);
@@ -112,4 +108,3 @@ class Order {
 }
 
 export default Order;
-//can DRY code 
