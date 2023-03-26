@@ -9,7 +9,7 @@ class Game {
     constructor() {
         this.menu = new Menu();
         this.customer = new Customer();
-        this.numSeconds = 20;
+        this.numSeconds = 2;
         this.order = new Order(this.numSeconds);
         this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
 
@@ -162,6 +162,7 @@ class Game {
         } else if (this.timer.timeLeft === 0 && !correctOrder) {
        
             this.customerLost += 1;
+            View.renderLostCustomers(this.customerLost);
             this.numCustomer += 1;
             if (this.gameOver()) {
                 this.renderGameOverMessage();
@@ -217,6 +218,9 @@ class Game {
         this.customerLost = 0;
         this.numCustomer = 0;
         this.renderScore();
+        View.renderLostCustomers(0);
+        addEventListener('keydown', this.handleKeyPress);
+        addEventListener('keyup', this.handleRemoveKeyPress);
 
         document.querySelector('#modal').classList.add('hidden');
         this.newGameRound();

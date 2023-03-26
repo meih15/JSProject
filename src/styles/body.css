@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  
 }
 
 #instruction {
@@ -14,18 +14,26 @@
     justify-content: space-between;
     align-items: flex-start;
     margin: 25px 0px;
+
 }
 
 .game-title {
     width: 100%;
     text-align: center;
     font-size: 88px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
+    color: #ff6e6e;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
 .introduction-title {
     font-size: 60px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: #ff6e6e;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(124, 9, 63, 0.5);
 }
 
 body {
@@ -35,25 +43,28 @@ body {
     background-repeat: no-repeat;
     color: white;
     background-position: center center;
+    background-attachment: fixed;
     font-family: 'Abel';
     overflow: scroll;
 }
 
 .main-content {
-    width: 100%;
-    min-height: 100%;
+    /* min-height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid white; 
-    border-radius: 40px;
-
 }
 
-#game-container {
-    display: flex;
+#game-canvas {
+    height: 700px;
+    min-width: 800px;
+    max-width: 1000px;
+    border: 5px solid white;
+    border-radius: 40px;
+    /* display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 
@@ -165,9 +176,113 @@ body {
 #introduction-contents {
     z-index: 1;
     position: fixed;
-    background: pink;
+    background: #fabbbb;
     padding: 20px;
-    border: 1px solid #888;
-    width: 450px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+#start-button {
+    font-size: 20px;
+    font-family: 'Abel';
+    width: 500px;
+    background-color: transparent;
+    /* color: #83213e; */
+    color: white;
+    font-weight: bolder;
+    border: 0;
+    display: block;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 20px 0 20px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid rgb(117, 173, 236);
+    background: rgb(127, 179, 238);
+    border-radius: 8px;
+    border-color: rgb(138, 181, 231) rgb(120, 169, 224) rgb(136, 177, 224);
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(128, 128, 128, 0.3), 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#start-button:hover {
+    background: rgb(105, 158, 219);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgb(90, 144, 206) rgb(95, 147, 206) rrgb(89, 151, 223)
+}
+
+#boba-break{
+    color:#ff6e6e;
+    font-weight: bold;
+    display: inline;
+    font-size: 30px;
+}
+
+#description-small {
+    width: 500px;
+    text-align: justify;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.instruction-title, .how-title {
+    color: rgb(127, 179, 238);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#instruction-i {
+    width: 500px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+
+.list-instruct ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    text-align: justify;
+
+}
+
+.list-instruct li {
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+
+#how-to-section {
+    width: 500px;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.grid-container {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 500px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#foot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }

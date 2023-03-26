@@ -62,14 +62,24 @@ class View {
     }
 
     static renderLostCustomers(numLostCustomers) {
-        let customerLost = document.getElementById('lost-customer');
+        const customerLost = document.getElementById('lost-customer');
         customerLost.innerHTML = "";
-        for (let i = 1; i <= numLostCustomers; i++) {
-            let loss = document.createElement('img');
-            loss.src = "";
-            customerLost.appendChild(loss);
-        }
+
+        const numSolidHearts = 3 - numLostCustomers;
+            for (let i = 1; i <= numSolidHearts; i++) {
+                const loss = document.createElement('i');
+                loss.className = "fa-solid fa-heart";
+                customerLost.appendChild(loss);
+            }
+        
+
+            for (let i = 1; i <= numLostCustomers; i++) {
+                const loss = document.createElement('i');
+                loss.className = "fa-regular fa-heart";
+                customerLost.appendChild(loss);
+            }
     }
+
 
     static renderGameOverMessage(totalScore) {
         const score = totalScore;
@@ -83,6 +93,8 @@ class View {
 
         document.querySelector('#modal').classList.remove('hidden');
     }
+
+
 }
 
 export default View;

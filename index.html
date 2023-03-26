@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/9c27b6e93f.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <title>bobabreak</title>
 </head>
@@ -20,20 +21,41 @@
         <div id="introduction-contents">
             <h1 class="introduction-title">bobabreak</h1>
             <div id="description">
-                <p>bobabreak is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in
+                <div id="description-small">
+                    <p id="boba-break">bobabreak</p> is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in
                     the bustling city of Los Angeles. Hone your barista skills as you take orders and serve customers the drink of
-                    their dreams!</p>
+                    their dreams!</div>
             <div id="instructions">
-                <p>bobabreak is a tea-themed food matching game. The player will take on the role of the barista that makes the bubble
-                tea orders to serve the correct drink to the customer. Players can use the keyboard or mouse to select components of the
-                drink. Players will have to choose the right cup-size, tea, and the toppings in order to pass the round. The time
-                allotted for each drink order will decrease after a certain amount of customers to increase difficulty over the course
-                of gameplay. The player will be given three lives. A wrong order or order not completed in time will result in a
-                customer lost, aka life lost. Losing all three lives will result in a game over.</p>
+                <div id="instruction-i">
+                    <p class="instruction-title">Instructions</p>
+                    <div class="list-instruct">
+                        <ul>
+                            <li>The player will take on the role of the barista that makes the bubble
+                            tea orders to serve the correct drink to the customer. </li>
+                            <li>The player will be given three lives. A wrong order or order not completed in time will result in a
+                            customer lost, aka life lost.</li> 
+                            <li> Losing all three lives will result in a game over.</li>
+                        </ul>
+                        </div>
+                </div>
+                <div id="how-to-section">
+                    <p class="how-title">How to play</p>
+                    <div class="grid-container">
+                        <div id="instruct-i">
+                           receive an order
+                        </div>
+                        <div id="instruct-ii">
+                           click or type to choose correct item
+                        </div>
+                        <div id="instruct-iii">
+                            click "Remove" or press backspace to deselect item
+                        </div>
+                    </div>
+                </div>
             </div>
 
             </div>
-            <button id="start-button">START</button>
+            <button id="start-button">Play Game</button>
         </div>
     </div>
     <div id="modal" class="hidden">
@@ -49,8 +71,12 @@
         <div id="game-canvas">
             <div id="top-bar">
                 <div id="timer-container"></div>
-                <div id="score">0 Orders</div>
-                <div id="lost-customer"></div>
+                <div id="score">0 orders</div>
+                <div id="lost-customer">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
             </div>
             <div id="main-interaction-container">
                 <div id="text-container"></div>
@@ -68,14 +94,17 @@
                 <div id="menu">
                     <div class="menu-first-row">
                         <div id="small" class="cup-sizes">Q</div>
+                        <p>Q</p>
                         <div id="medium" class="cup-sizes">W</div>
+                        <p>W</p>
                         <div id="large" class="cup-sizes">E</div>
+                        <p>E</p>
                     </div>
                     <div class="menu-second-row">
                         <div id="oolong" class="tea-choice">A</div>
                         <div id="ginger" class="tea-choice">S</div>
-                        <div id="matcha" class="tea-choice">D</div>
-                        <div id="jasmine" class="tea-choice">F</div>
+                        <div id="green" class="tea-choice">D</div>
+                        <div id="chaomille" class="tea-choice">F</div>
                         <div id="white" class="tea-choice">G</div>
                         <div id="black" class="tea-choice">H</div>
                     </div>
@@ -90,12 +119,12 @@
                 </div>
                 <button id="remove-button">Remove</button>
             </div>
-            </div>
+        </div>
             
     
     </main>
 </body>
-<footer>Image by <a
+<footer id="foot">Image by <a
     href="https://www.freepik.com/free-vector/urban-city-background-video-conferencing_9800079.htm#query=city%20pastel%20pixel%20art&position=41&from_view=search&track=ais">Freepik</a></footer>
 
 </html>
