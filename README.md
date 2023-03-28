@@ -51,8 +51,12 @@ In addition, this project includes:
 Images
 https://dribble.com/shots/8089955-Bubble-Tea (toppings)
 
-https://unblast.com/100-free-cartoon-characters-sketch-figma/
-(customers)
+Cup size images by Gerren Rabideau from Pixaby
+https://pixabay.com/service/terms/
+
+https://unblast.com/100-free-cartoon-characters-sketch-figma/ (customers)
+
+https://www.mydraw.com/templates-infographics-tea-types-infographic (tea-flavors)
 
 - Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
 

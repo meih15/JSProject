@@ -1,42 +1,118 @@
 #main-interaction-container {
-    height: 280px;
+    height: 265px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    margin-top: 30px;
 }
 
 #customer-container {
     width: 280px;
-    height: 250px;
+    height: 260px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-self: flex-end;
 }
 
 #customer-container>img {
     height: 100%;
     width: auto;
+    display: flex;
+    align-self: flex-end;
 }
 
+
 #text-container {
-    width: 275px;
-    height: 175px;
-    display: flex;
+    padding: 5px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-column-gap: 10px;
+    margin-left: 150px;
     justify-content: center;
-    align-items: center;
+    margin-top: -30px;
+    border: 3px solid #4E5660;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    /* background-color: #ffedfa; */
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+#text-container.two-elements {
+    margin-top: 30px;
+    width: 132px;
+    justify-content: left;
+    margin-left: 180px;
+}
+
+#text-container.three-elements {
+    margin-top: 20px;
+    width: 200px;
+}
+
+#text-container.four-elements {
+    margin-top: 10px;
+    width: 200px;
+}
+
+#text-container.five-elements {
+    margin-top: 15px;
+    width: 200px;
+}   
+
+#text-container.six-elements {
+    margin-top: -33px;
+    width: 200px;
+
+}
+
+#text-container .group-1 {
+    grid-column: 1;
+}
+
+#text-container .group-1 .order-element {
+    background-color: #fffeed;
+}
+
+#text-container .group-2 {
+    grid-column: 2;
+}
+
+#text-container .group-2 .order-element {
+    background-color: #edfaff;
+}
+
+#text-container .group-3 {
+    grid-column: 3;
+}
+
+#text-container .group-3 .order-element {
+    margin-bottom: 2px;
+    background-color: #ededff;
 }
 
 .order-element {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     background: #FFFFFF;
     border-radius: 4px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    padding: 3px;
 }
 
 .order-element>img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
+
+#controls {
+    background-color: rgb(232, 202, 241);;
+    height: 230px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+

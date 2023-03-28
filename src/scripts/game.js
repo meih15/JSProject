@@ -156,6 +156,7 @@ class Game {
         } else if (this.timer.timeLeft === 0 && !correctOrder) {
        
             this.customerLost += 1;
+            View.renderLostCustomers(this.customerLost);
             this.numCustomer += 1;
             if (this.gameOver()) {
                 this.renderGameOverMessage();
@@ -168,10 +169,24 @@ class Game {
     }
 
     resetGameRound() {
+        let textContainer = document.getElementById("text-container");
+        
+        if (textContainer.classList.contains('two-elements')) {
+            textContainer.classList.remove('two-elements');
+        } else if (textContainer.classList.contains('three-elements')) {
+            textContainer.classList.remove('three-elements');
+        } else if (textContainer.classList.contains('four-elements')) {
+            textContainer.classList.remove('four-elements');
+        } else if (textContainer.classList.contains('five-elements')) {
+            textContainer.classList.remove('five-elements');
+        } else {
+            textContainer.classList.remove('six-elements');
+        }
         this.order.deleteBoba();
         this.order.deleteOrder();
         this.timer.stop();
         this.timer.removeTimer();
+
     }
 
     newGameRound() {
@@ -206,6 +221,9 @@ class Game {
         this.customerLost = 0;
         this.numCustomer = 0;
         this.renderScore();
+        View.renderLostCustomers(0);
+        addEventListener('keydown', this.handleKeyPress);
+        addEventListener('keyup', this.handleRemoveKeyPress);
 
         document.querySelector('#modal').classList.add('hidden');
         this.newGameRound();

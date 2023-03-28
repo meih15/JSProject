@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <script src="https://kit.fontawesome.com/9c27b6e93f.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <title>bobabreak</title>
 </head>
@@ -20,82 +21,177 @@
         <div id="introduction-contents">
             <h1 class="introduction-title">bobabreak</h1>
             <div id="description">
-                <p>bobabreak is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in
+                <div id="description-small">
+                    <p id="boba-break">bobabreak</p> is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in
                     the bustling city of Los Angeles. Hone your barista skills as you take orders and serve customers the drink of
-                    their dreams!</p>
+                    their dreams!</div>
             <div id="instructions">
-                <p>bobabreak is a tea-themed food matching game. The player will take on the role of the barista that makes the bubble
-                tea orders to serve the correct drink to the customer. Players can use the keyboard or mouse to select components of the
-                drink. Players will have to choose the right cup-size, tea, and the toppings in order to pass the round. The time
-                allotted for each drink order will decrease after a certain amount of customers to increase difficulty over the course
-                of gameplay. The player will be given three lives. A wrong order or order not completed in time will result in a
-                customer lost, aka life lost. Losing all three lives will result in a game over.</p>
+                <div id="instruction-i">
+                    <p class="instruction-title">Instructions</p>
+                    <div class="list-instruct">
+                        <ul>
+                            <li>The player will take on the role of the barista that makes the bubble
+                            tea orders to serve the correct drink to the customer. </li>
+                            <li>The player will be given three lives. A wrong order or order not completed in time will result in a
+                            customer lost, aka life lost.</li> 
+                            <li> Losing all three lives will result in a game over.</li>
+                        </ul>
+                        </div>
+                </div>
+                <div id="how-to-section">
+                    <p class="how-title">How to play</p>
+                    <div class="grid-container">
+                        <div id="instruct-i">
+                            <img id='order-image' src="./assets/instructions/order.png" alt="Order Image">
+                           receive an order
+                        </div>
+                        <div id="instruct-ii">
+                            <div id="image-med">
+                                <div id="image-med-1">
+                                    <img id='med-image' src="./assets/instructions/medium.png" alt="Order Image">
+                                    <i class="fa-regular fa-hand-pointer"></i>
+                                </div>
+                                <div id="image-med-2">
+                                    <img id='med-image' src="./assets/instructions/medium-key.png" alt="Order Image">
+                                    <i class="fa-regular fa-keyboard"></i>
+                                </div>
+                            </div>
+                            click or type to choose correct item
+                        </div>
+                        <div id="instruct-iii">
+                            <div id="image-delete">
+                                <div id="image-delete-1">
+                                <img id='delete-image' src="./assets/instructions/remove.png" alt="Order Image">
+                                <i class="fa-regular fa-hand-pointer"></i>
+                                </div>
+                                <div id="image-delete-2">
+                                <i id="image-delete-icon" class="fa-solid fa-delete-left"></i>
+                                <i id='image-delete-2-icon' class="fa-regular fa-keyboard"></i>
+                                </div>
+                            </div>
+                            click "Remove" or press backspace to deselect item
+                        </div>
+                    </div>
+                </div>
             </div>
 
             </div>
-            <button id="start-button">START</button>
+            <button id="start-button">Play Game</button>
+            <div id='intro-section'>
+                <a id='github' href='https://github.com/meih15'><i id='footer-github' class="fa-brands fa-square-github" ></i></a>
+                <a id='linkedin' href='https://www.linkedin.com/in/mei-huang-ba967a159'><i id='footer-linkedin'
+                    class="fa-brands fa-linkedin" ></i></a>
+                <i id='website' class="fa-solid fa-square-pen" ></i>
+            </div>
         </div>
     </div>
-    <div id="modal" class="hidden">
-        <div class="modal-screen"></div>
-        <div class="modal content">
-            <div class="message"></div>
-            <button id="restart-button">REPLAY</button>
+    <div id="center">
+        <div id="modal" class="hidden">
+            <div class="modal-screen"></div>
+            <div class="modal-content">
+                <div class="message"></div>
+                <button id="restart-button">REPLAY</button>
+            </div>
         </div>
     </div>
 
     <h1 class="game-title">bobabreak</h1>
     <main class="main-content">
         <div id="game-canvas">
+            <div></div>
             <div id="top-bar">
+                <div id="lost-customer">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div id="score">0 orders</div>
                 <div id="timer-container"></div>
-                <div id="score">0 Orders</div>
-                <div id="lost-customer"></div>
             </div>
             <div id="main-interaction-container">
-                <div id="text-container"></div>
+                <div id="add-border-text">
+                <div id="text-container">
+                        <div class="group-1"></div>
+                        <div class="group-2"></div>
+                        <div class="group-3"></div>
+                    </div>
+                </div>
                 <div id="main-interaction">
-                  
                     <div id="customer-container"></div>
                 </div>
             </div>
-
             <div id="counter">
-            <div id="boba-container"></div>
+                <div id="boba-container"></div>
             </div>
-
             <div id="controls">
                 <div id="menu">
                     <div class="menu-first-row">
-                        <div id="small" class="cup-sizes">Q</div>
-                        <div id="medium" class="cup-sizes">W</div>
-                        <div id="large" class="cup-sizes">E</div>
+                        <div id="small" class="cup-sizes">
+                            <div class="letter">Q</div>
+                        </div>
+                        <div id="medium" class="cup-sizes">
+                            <div class="letter">W</div>
+                        </div>
+                        <div id="large" class="cup-sizes">
+                            <div class="letter">E</div>
+                        </div>
                     </div>
                     <div class="menu-second-row">
-                        <div id="oolong" class="tea-choice">A</div>
-                        <div id="ginger" class="tea-choice">S</div>
-                        <div id="matcha" class="tea-choice">D</div>
-                        <div id="jasmine" class="tea-choice">F</div>
-                        <div id="white" class="tea-choice">G</div>
-                        <div id="black" class="tea-choice">H</div>
+                        <div id="oolong" class="tea-choice">
+                            <div class="letter">A</div>
+                        </div>                        
+                        <div id="ginger" class="tea-choice">
+                            <div class="letter">S</div>
+                        </div>
+                        <div id="green" class="tea-choice">
+                            <div class="letter">D</div>
+                        </div>
+                        <div id="chaomille" class="tea-choice">
+                            <div class="letter">F</div>
+                        </div>
+                        <div id="white" class="tea-choice">
+                            <div class="letter">G</div>
+                        </div>
+                        <div id="black" class="tea-choice">
+                            <div class="letter">H</div>
+                        </div>
                     </div>
                     <div class="menu-third-row">
-                        <div id="tapioca" class="topping-choice">Z</div>
-                        <div id="aloe" class="topping-choice">X</div>
-                        <div id="white-pearls" class="topping-choice">C</div>
-                        <div id="pudding" class="topping-choice">V</div>
-                        <div id="herbal-jelly" class="topping-choice">B</div>
-                        <div id="red-bean" class="topping-choice">N</div>
+                        <div id="tapioca" class="topping-choice">
+                            <div class="letter">Z</div>
+                        </div>
+                        <div id="aloe" class="topping-choice">
+                            <div class="letter">X</div>
+                        </div>
+                        <div id="white-pearls" class="topping-choice">
+                            <div class="letter">C</div>
+                        </div>
+                        <div id="pudding" class="topping-choice">
+                            <div class="letter">V</div>
+                        </div>
+                        <div id="herbal-jelly" class="topping-choice">
+                            <div class="letter">B</div>
+                        </div>
+                        <div id="red-bean" class="topping-choice">
+                            <div class="letter">N</div>
+                        </div>
                     </div>
                 </div>
                 <button id="remove-button">Remove</button>
             </div>
-            </div>
-            
-    
+        </div>
+        <div id='bottom-section'>
+            <a id='b-github' href='https://github.com/meih15'><i id='footer-github' class="fa-brands fa-square-github"></i></a>
+            <a id='b-linkedin' href='https://www.linkedin.com/in/mei-huang-ba967a159'><i id='footer-linkedin'
+                class="fa-brands fa-linkedin"></i></a>
+            <i id='b-website' class="fa-solid fa-square-pen"></i>
+        </div>
     </main>
 </body>
-<footer>Image by <a
-    href="https://www.freepik.com/free-vector/urban-city-background-video-conferencing_9800079.htm#query=city%20pastel%20pixel%20art&position=41&from_view=search&track=ais">Freepik</a></footer>
+<footer id="foot">Background images
+    <a href="https://www.freepik.com/free-vector/urban-city-background-video-conferencing_9800079.htm#query=city%20pastel%20pixel%20art&position=41&from_view=search&track=ais">Freepik</a>
+    <a
+        href="https://www.freepik.com/free-vector/drinks-icons-pixel-art_29012370.htm#query=pixel%20art%20boba&position=3&from_view=search&track=ais">Freepik</a>
+</footer>
 
 </html>

@@ -18,8 +18,8 @@ export const MILK_TEA_CHOICES = {
     //list of teas
     "oolong": "./assets/menu/oolong.png",
     "ginger": "./assets/menu/ginger.png",
-    "matcha": "./assets/menu/matcha.png",
-    "jasmine": "./assets/menu/jasmine.png",
+    "green": "./assets/menu/green.png",
+    "chaomille": "./assets/menu/chaomille.png",
     "white": "./assets/menu/white.png",
     "black": "./assets/menu/black.png"
 };
@@ -41,8 +41,8 @@ export const KEY_MAP = {
 
     "KeyA": "oolong",
     "KeyS": "ginger",
-    "KeyD": "matcha",
-    "KeyF": "jasmine",
+    "KeyD": "green",
+    "KeyF": "chaomille",
     "KeyG": "white",
     "KeyH": "black",
 
