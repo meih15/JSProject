@@ -563,9 +563,9 @@ body {
 #remove-button:hover {
     background: rgb(105, 158, 219);
     color: white;
-    transform: scale(1.0);
+    transform: scale(1.0) translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    border-color: rgb(90, 144, 206) rgb(95, 147, 206) rrgb(89, 151, 223)
+    border-color: rgb(90, 144, 206) rgb(95, 147, 206) rrgb(89, 151, 223);
 }
 
 
@@ -605,7 +605,11 @@ body {
 
 #b-github:hover, #b-linkedin:hover, #b-website:hover {
     color: rgb(155, 16, 201);
-    border-color: rgb(90, 144, 206) rgb(95, 147, 206) rrgb(89, 151, 223)
+    border-color: rgb(90, 144, 206) rgb(95, 147, 206) rgb(89, 151, 223)
+}
+
+#footer-github:hover, #footer-linkedin:hover, .fa-solid.fa-square-pen:hover {
+    transform: scale(1.1);
 }
 
 
@@ -706,6 +710,13 @@ body {
     color: rgb(181, 112, 204);
     font-size: 24px;
 }
+
+#small:hover, #medium:hover, #large:hover, #oolong:hover, #ginger:hover, #green:hover,
+#chaomille:hover, #white:hover, #black:hover, #tapioca:hover, 
+#aloe:hover, #white-pearls:hover, #pudding:hover, #herbal-jelly:hover, #red-bean:hover {
+    top: -5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/customer.css ***!
   \*******************************************************************************************************/
@@ -732,6 +743,7 @@ body {
 
 
 #text-container {
+    position: relative;
     padding: 5px;
     padding-right: 10px;
     display: grid;
@@ -748,6 +760,24 @@ body {
 }
 
 
+#text-container::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 0px 30px;
+    border-color: transparent transparent transparent #4E5660;
+    top: 12px;
+    right: -30px;
+    /* border-width: 25px 0 0px 25px;
+    border-color: transparent transparent transparent #4E5660;
+    top: 10px;
+    right: -25px;
+    border-top-right-radius: 10px; */
+}
+
+ 
 
 #text-container.two-elements {
     margin-top: 30px;
@@ -827,7 +857,16 @@ body {
 }
 
 
+/* .customer-in {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+    transition: opacity 1s ease-in-out, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+} */
 
+/* .customer-in.show {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+} */
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

@@ -179,9 +179,15 @@ class Game {
             textContainer.classList.remove('four-elements');
         } else if (textContainer.classList.contains('five-elements')) {
             textContainer.classList.remove('five-elements');
-        } else {
+        } else if (textContainer.classList.contains('six-elements')) {
             textContainer.classList.remove('six-elements');
         }
+
+        
+
+        let customer = document.getElementsByClassName('customer-in')[0];
+        customer.classList.remove('customer-in')
+
         this.order.deleteBoba();
         this.order.deleteOrder();
         this.timer.stop();
@@ -212,6 +218,25 @@ class Game {
     }
 
     restart() {
+        let textContainer = document.getElementById("text-container");
+        
+        if (textContainer.classList.contains('two-elements')) {
+            textContainer.classList.remove('two-elements');
+        } else if (textContainer.classList.contains('three-elements')) {
+            textContainer.classList.remove('three-elements');
+        } else if (textContainer.classList.contains('four-elements')) {
+            textContainer.classList.remove('four-elements');
+        } else if (textContainer.classList.contains('five-elements')) {
+            textContainer.classList.remove('five-elements');
+        } else if (textContainer.classList.contains('six-elements')) {
+            textContainer.classList.remove('six-elements');
+        }
+
+        
+
+        let customer = document.getElementsByClassName('customer-in')[0];
+        customer.classList.remove('customer-in')
+
         document.querySelector('#lost-customer').innerHTML = '';
         document.querySelector('#score').innerHTML = '';
         document.querySelector('#timer-container').innerHTML = '';
