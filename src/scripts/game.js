@@ -45,24 +45,24 @@ class Game {
 
     roundDifficulty () {
         this.order = null;
-        if (this.checkTotalCustomers() >= 0) {
-            this.numSeconds = 20
-        } else if (this.checkTotalCustomers() >= 5) {
-            this.numSeconds = 15
-        } else if (this.checkTotalCustomers() >= 10) {
-            this.numSeconds = 10
-        } else if (this.checkTotalCustomers() >= 15) {
-            this.numSeconds = 8
-        } else if (this.checkTotalCustomers() >= 25) {
-            this.numSeconds = 6
-        } else if (this.checkTotalCustomers() >= 40) {
-            this.numSeconds = 5
-        } else if (this.checkTotalCustomers() >= 60) {
-            this.numSeconds = 4
-        } else if (this.checkTotalCustomers() >= 80) {
-            this.numSeconds = 3
-        } else if (this.checkTotalCustomers() >= 100) {
+        if (this.checkTotalCustomers() >= 100) {
             this.numSeconds = 2
+        } else if (this.checkTotalCustomers() >= 50) {
+            this.numSeconds = 3
+        } else if (this.checkTotalCustomers() >= 40) {
+            this.numSeconds = 4
+        } else if (this.checkTotalCustomers() >= 30) {
+            this.numSeconds = 5
+        } else if (this.checkTotalCustomers() >= 15) {
+            this.numSeconds = 6
+        } else if (this.checkTotalCustomers() >= 10) {
+            this.numSeconds = 8
+        } else if (this.checkTotalCustomers() >= 6) {
+            this.numSeconds = 10
+        } else if (this.checkTotalCustomers() >= 3) {
+            this.numSeconds = 15
+        } else if (this.checkTotalCustomers() >= 0) {
+            this.numSeconds = 20
         }
         return new Order(this.numSeconds);
     }
@@ -74,28 +74,22 @@ class Game {
             this.order.removeItem();
             return;
         }
-
         let elementId = KEY_MAP[event.code];
         if (!elementId) return;
 
         let element = document.getElementById(elementId);
         if (!element) return;
 
-        //element.classList.add('hover') add effect
         this.order.addItem(elementId);
         this.roundStatus();
-
     }
 
     handleRemoveKeyPress(event) {
-
         let elementId = KEY_MAP[event.code];
         if (!elementId) return;
 
         let element = document.getElementById(elementId);
         if (!element) return;
-
-        //element.classList.remove('hover') add effect
     }
 
     removeListenerOnWindow() {
@@ -189,12 +183,10 @@ class Game {
             textContainer.classList.remove('six-elements');
         }
         this.order.deleteBoba();
-        //remove customer by takign away classList(visual effect) and adding new one
         this.order.deleteOrder();
         this.timer.stop();
         this.timer.removeTimer();
-        //this.customer = null;
-        
+
     }
 
     newGameRound() {
@@ -205,15 +197,12 @@ class Game {
     }
 
     correctBoba() {
-    
         let isCorrect = true;
         this.order.order.forEach((item, idx) => {
             if(this.order.boba[idx] !== item) {
-            
                 isCorrect = false;
             }
         })
-
         return isCorrect;
     }
 

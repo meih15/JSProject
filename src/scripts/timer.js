@@ -32,8 +32,6 @@ class Timer {
         }
     }
 
-    //might not show 0 seconds on timer when round stops. might need adjustment
-
     removeTimer() {
         document.getElementById("timer").remove();
     }
