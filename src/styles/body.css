@@ -644,6 +644,6 @@ body {
 #small:hover, #medium:hover, #large:hover, #oolong:hover, #ginger:hover, #green:hover,
 #chaomille:hover, #white:hover, #black:hover, #tapioca:hover, 
 #aloe:hover, #white-pearls:hover, #pudding:hover, #herbal-jelly:hover, #red-bean:hover {
-    top: -5px;
+    transform: translateY(-5px);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
