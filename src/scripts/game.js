@@ -26,7 +26,7 @@ class Game {
         this.handleClickonRemoveButton = this.handleClickonRemoveButton.bind(this);
         this.checkTotalCustomers = this.checkTotalCustomers.bind(this);
         this.gameStart = this.gameStart.bind(this);
-
+        
         this.renderScore();
 
         addEventListener('keydown', this.handleKeyPress);
