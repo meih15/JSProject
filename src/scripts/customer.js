@@ -11,7 +11,6 @@ class Customer {
         let customerImage = document.createElement("img");
         customerImage.src = NEW_CUSTOMER[idx];
         customerImage.alt = "customer-image";
-        customerImage.classList.add("visual-effect-for-customer"); //shorten name later
         let customerContainer = document.getElementById("customer-container");
         customerContainer.appendChild(customerImage);
     }
@@ -20,7 +19,6 @@ class Customer {
         let textContainer = document.getElementById("text-container");
         let textBox = document.createElement("div");
         textBox.classList.add("text-box");
-        textBox.classList.add("visual-effect");
         textContainer.appendChild(textBox);
     }
 }

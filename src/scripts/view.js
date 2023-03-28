@@ -71,7 +71,7 @@ class View {
             } else if (toppings.includes(element)) {
                 image.src = TOPPING_CHOICES[element];
             };
-
+            
             image.alt = `${element}-image`;
             bobaEle.appendChild(image);
         }
@@ -125,7 +125,6 @@ class View {
         } else {
             msg.innerHTML = `You served ${score} customer!`;
         }
-
         document.querySelector('#modal').classList.remove('hidden');
     }
 
