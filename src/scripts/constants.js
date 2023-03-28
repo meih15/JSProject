@@ -42,15 +42,15 @@ export const KEY_MAP = {
     "KeyA": "oolong",
     "KeyS": "ginger",
     "KeyD": "green",
-    "KeyF": "chaomille",
-    "KeyG": "white",
-    "KeyH": "black",
+    "KeyZ": "chaomille",
+    "KeyX": "white",
+    "KeyC": "black",
 
-    "KeyZ": "tapioca",
-    "KeyX": "aloe",
-    "KeyC": "white-pearls",
-    "KeyV": "pudding",
-    "KeyB": "herbal-jelly",
-    "KeyN": "red-bean"
+    "KeyI": "tapioca",
+    "KeyO": "aloe",
+    "KeyP": "white-pearls",
+    "KeyJ": "pudding",
+    "KeyK": "herbal-jelly",
+    "KeyL": "red-bean"
 };
 

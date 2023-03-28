@@ -11,6 +11,7 @@ class Customer {
         let customerImage = document.createElement("img");
         customerImage.src = NEW_CUSTOMER[idx];
         customerImage.alt = "customer-image";
+        customerImage.classList.add("customer-in")
         let customerContainer = document.getElementById("customer-container");
         customerContainer.appendChild(customerImage);
     }
@@ -19,6 +20,7 @@ class Customer {
         let textContainer = document.getElementById("text-container");
         let textBox = document.createElement("div");
         textBox.classList.add("text-box");
+        textBox.classList.add("text-in")
         textContainer.appendChild(textBox);
     }
 }
