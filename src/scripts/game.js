@@ -186,6 +186,7 @@ class Game {
         this.order.deleteOrder();
         this.timer.stop();
         this.timer.removeTimer();
+
     }
 
     newGameRound() {
