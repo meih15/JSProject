@@ -91,8 +91,20 @@ class Order {
         if (this.boba.length < this.order.length) {
             this.boba.push(item);
             this.renderBoba(this.boba);
+
+            let bobaIndex = this.boba.length - 1;
+            let bobaElement = document.querySelector(`.boba-element-${bobaIndex}`);
+
+            if (Object.keys(DRINK_SIZES).includes(item)) {
+            bobaElement.classList.add('cup');
+            } else if (Object.keys(MILK_TEA_CHOICES).includes(item)) {
+            bobaElement.classList.add('tea');
+            } else if (Object.keys(TOPPING_CHOICES).includes(item)) {
+            bobaElement.classList.add('topping');
+            }
         }
     }
+
 
     removeItem() {
         if (this.boba.length) {
@@ -100,6 +112,14 @@ class Order {
 
             let bobaEle = document.querySelector(`.boba-element-${i}`);
             bobaEle.firstElementChild.remove();
+
+            if (bobaEle.classList.contains('cup')) {
+                bobaEle.classList.remove('cup');
+            } else if (bobaEle.classList.contains('tea')) {
+                bobaEle.classList.remove('tea');
+            } else if (bobaEle.classList.contains('topping')) {
+                bobaEle.classList.remove('topping');
+            }
 
             this.boba.pop();
             this.renderBoba(this.boba);

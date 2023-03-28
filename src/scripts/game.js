@@ -9,7 +9,7 @@ class Game {
     constructor() {
         this.menu = new Menu();
         this.customer = new Customer();
-        this.numSeconds = 2;
+        this.numSeconds = 20;
         this.order = new Order(this.numSeconds);
         this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
 
@@ -175,12 +175,26 @@ class Game {
     }
 
     resetGameRound() {
+        let textContainer = document.getElementById("text-container");
+        
+        if (textContainer.classList.contains('two-elements')) {
+            textContainer.classList.remove('two-elements');
+        } else if (textContainer.classList.contains('three-elements')) {
+            textContainer.classList.remove('three-elements');
+        } else if (textContainer.classList.contains('four-elements')) {
+            textContainer.classList.remove('four-elements');
+        } else if (textContainer.classList.contains('five-elements')) {
+            textContainer.classList.remove('five-elements');
+        } else {
+            textContainer.classList.remove('six-elements');
+        }
         this.order.deleteBoba();
         //remove customer by takign away classList(visual effect) and adding new one
         this.order.deleteOrder();
         this.timer.stop();
         this.timer.removeTimer();
         //this.customer = null;
+        
     }
 
     newGameRound() {
