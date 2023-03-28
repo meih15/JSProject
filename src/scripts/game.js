@@ -9,7 +9,6 @@ class Game {
     constructor() {
         this.menu = new Menu();
         this.customer = new Customer();
-        
         this.numSeconds = 20;
         this.order = new Order(this.numSeconds);
         this.timer = new Timer(this.order.numSeconds, this.roundStatus.bind(this));
@@ -61,10 +60,8 @@ class Game {
         } else if (this.checkTotalCustomers() >= 6) {
             this.numSeconds = 10
         } else if (this.checkTotalCustomers() >= 3) {
-            
             this.numSeconds = 15
         } else if (this.checkTotalCustomers() >= 0) {
-            
             this.numSeconds = 20
         }
         return new Order(this.numSeconds);
