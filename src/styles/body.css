@@ -28,7 +28,9 @@
 }
 
 .introduction-title {
-    font-size: 60px;
+    font-size: 3.8vw;
+    /* min-height: 72px; */
+    max-height: 87px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     color: #ff6e6e;
@@ -253,6 +255,9 @@ body {
     align-items: center;
     border-radius: 25px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    /* height: 80vh; */
+    height: fit-content;
+    /* min-height: 580px; */
 }
 
 
@@ -297,9 +302,10 @@ body {
 }
 
 
-
 #start-button{
-    font-size: 20px;
+    /* font-size: 2vh; */
+    font-size: 1vw;
+    max-height: 42px;
     font-family: 'Abel';
     width: 500px;
     background-color: transparent;
@@ -366,21 +372,28 @@ body {
     color:#ff6e6e;
     font-weight: bold;
     display: inline;
-    font-size: 30px;
+    /* font-size: 30px; */
+    /* font-size: 3vh; */
+    font-size: 1.6vw;
+    max-height: 36px;
 }
 
 #description-small {
     width: 500px;
     text-align: justify;
     margin-bottom: 30px;
-    font-size: 18px;
+    /* font-size: 1.9vh; */
+    font-size: 0.95vw;
+    max-height: 83.5px;
     color: white;
 }
 
 .instruction-title, .how-title {
     color: rgb(127, 179, 238);
     font-weight: bold;
-    font-size: 20px;
+    /* font-size: 2.1vh; */
+    font-size: 1.05vw;
+    max-height: 20.2px;
     margin-bottom: 5px;
 }
 
@@ -401,7 +414,9 @@ body {
 
 .list-instruct li {
     padding-bottom: 5px;
-    font-size: 20px;
+    /* font-size: 1.8vh; */
+    font-size: 0.9vw;
+    max-height: 40px;
 }
 
 
@@ -418,7 +433,9 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     width: 500px;
-    font-size: 16px;
+    max-height: 147px;
+    /* font-size: 1.7vh; */
+    font-size: 0.9vw;
     text-align: left;
 }
 
@@ -649,7 +666,7 @@ body {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-@media only screen and (max-width: 1440px) {
+/* @media only screen and (max-width: 1440px) {
     .introduction-title {
         font-size: 50px;
         padding-bottom: 15px;
@@ -710,4 +727,4 @@ body {
         margin-top: 15px;
         margin-bottom: 15px;
     }
-}
+} */
