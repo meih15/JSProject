@@ -24,7 +24,6 @@ In **bobabreak**, players will be able to:
 
 In addition, this project includes:
 - Instructions on how to play
-- Options to play different Asian music
 
 ## Wireframes
 
