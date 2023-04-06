@@ -15,6 +15,10 @@ Play **bobabreak** live [here](https://meih15.github.io/bobabreak/)
 ## Wireframes
 
 ![wireframe](./assets/introduction/wireframe.png)
+![2023-04-05 (5)](https://user-images.githubusercontent.com/117603258/230257427-d5d5c735-fe48-4ef9-bd57-c5c7e1f76e99.png)
+![2023-04-05 (6)](https://user-images.githubusercontent.com/117603258/230257430-5942f5be-882f-41a6-801e-97ed28215ddf.png)
+
+
 
 ## Technologies, Libraries, APIs
 - Javascript
