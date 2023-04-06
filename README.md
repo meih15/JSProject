@@ -34,7 +34,7 @@ This project includes:
 ![2023-04-05 (4)](https://user-images.githubusercontent.com/117603258/230256482-e71a500a-983c-4b31-a695-14cdb70f82a5.png)
 
 
-In **bobabreak**, players will be able to:
+In **bobabreak**, are able to:
 - Start a new game and restart the game
 - Use the keyboard or mouse to select each drink's ingredients
 
@@ -105,8 +105,7 @@ handleKeyPress(event) {
 
 
 - Collect a point for serving the correct drink to customers
-- Lose a customer for each missed bubble tea order
-- The game gets increasingly more difficult based on the number of customer you served correctly. After certain checkpoints of correct customer served, the time per round will decrease.
+  - The game gets increasingly more difficult based on the number of customer you served correctly. After certain checkpoints of correct customer served, the time per round will decrease.
 
 ```js
 roundStatus() {
@@ -173,6 +172,8 @@ roundStatus() {
     }
 
 ```
+
+- Lose a customer for each missed bubble tea order
 - Lose the game when you lose 3 customers
 
 
