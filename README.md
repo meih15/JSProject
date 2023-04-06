@@ -1,4 +1,4 @@
-# JSProject
+# bobabreak
 
 ## Background
 <!-- **bobabreak** is a tea-themed matching game where the player serves as a barista in a bubble-tea shop newly opened in the bustling city of Los Angeles. Hone your barista skills as you serve customers the drink of their dreams and collect revenue to keep your shop open!  -->
