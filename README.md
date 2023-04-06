@@ -12,19 +12,6 @@
 ## Live
 Play **bobabreak** live [here](https://meih15.github.io/bobabreak/)
 
-## Functionality & MVPS
-
-In **bobabreak**, players will be able to:
-- Start a new game and restart the game
-- Use the keyboard or mouse to select each drink's ingredients
-- Collect money for serving the correct drink to customers
-- Change their store's status once you reach a certain amount of revenue
-- Lose a customer for each missed bubble tea order
-- Lose the game when you lose 3 customers
-
-In addition, this project includes:
-- Instructions on how to play
-
 ## Wireframes
 
 ![wireframe](./assets/introduction/wireframe.png)
@@ -33,6 +20,88 @@ In addition, this project includes:
 - Javascript
 - NPM and Webpack
 - HTML/CSS
+
+## Functionality & MVPS
+
+In **bobabreak**, players will be able to:
+- Start a new game and restart the game
+- Use the keyboard or mouse to select each drink's ingredients
+
+```js
+handleKeyPress(event) {
+        event.preventDefault();
+        if (event.code === "Backspace") {
+            this.order.removeItem();
+            return;
+        }
+        let elementId = KEY_MAP[event.code];
+        if (!elementId) return;
+
+        let element = document.getElementById(elementId);
+        if (!element) return;
+
+        this.order.addItem(elementId);
+        this.roundStatus();
+    }
+
+    handleRemoveKeyPress(event) {
+        let elementId = KEY_MAP[event.code];
+        if (!elementId) return;
+
+        let element = document.getElementById(elementId);
+        if (!element) return;
+    }
+
+    removeListenerOnWindow() {
+        window.removeEventListener('keydown', this.handleKeyPress);
+        window.removeEventListener('keyup', this.handleRemoveKeyPress);
+    }
+
+    handleClickonMenuElements() {
+        let menuCupSize = Array.from(document.querySelectorAll('.cup-sizes'));
+        menuCupSize.forEach(item => {
+            item.addEventListener('click', () => {
+                this.order.addItem(item.id);
+                this.roundStatus();
+            })
+        })
+
+        let menuTeas = Array.from(document.querySelectorAll('.tea-choice'));
+        menuTeas.forEach(item => {
+            item.addEventListener('click', () => {
+                this.order.addItem(item.id);
+                this.roundStatus();
+            })
+        })
+
+        let menuToppings = Array.from(document.querySelectorAll('.topping-choice'));
+        menuToppings.forEach(item => {
+            item.addEventListener('click', () => {
+                this.order.addItem(item.id);
+                this.roundStatus();
+            })
+        })
+    }
+
+    handleClickonRemoveButton() {
+        let button = document.getElementById('remove-button');
+        button.addEventListener('click', () => {
+            this.order.removeItem();
+            //this.roundStatus();
+        })
+    }
+ ```
+
+
+- Collect a point for serving the correct drink to customers
+- Lose a customer for each missed bubble tea order
+- Lose the game when you lose 3 customers
+
+In addition, this project includes:
+- Instructions on how to play
+
+![2023-04-05 (4)](https://user-images.githubusercontent.com/117603258/230256482-e71a500a-983c-4b31-a695-14cdb70f82a5.png)
+
 
 ## Implementation Timeline
 - Friday: Project setup and outlining the game logic
