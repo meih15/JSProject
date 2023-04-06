@@ -95,6 +95,73 @@ handleKeyPress(event) {
 
 - Collect a point for serving the correct drink to customers
 - Lose a customer for each missed bubble tea order
+- The game gets increasingly more difficult based on the number of customer you served correctly. After certain checkpoints of correct customer served, the time per round will decrease.
+
+```js
+roundStatus() {
+        if (this.gameOver()) {
+            this.renderGameOverMessage();
+            return;
+        }
+        const correctOrder = this.correctBoba();
+
+
+        if (this.timer.timeLeft > 0 && correctOrder) {
+         
+            this.totalScore += 1;
+            this.numCustomer += 1;
+            this.renderScore();
+
+            this.resetGameRound();
+            this.newGameRound();
+
+        } else if (this.timer.timeLeft === 0 && !correctOrder) {
+       
+            this.customerLost += 1;
+            View.renderLostCustomers(this.customerLost);
+            this.numCustomer += 1;
+            if (this.gameOver()) {
+                this.renderGameOverMessage();
+                this.timer.stop();
+                return;
+            }
+            this.resetGameRound();
+            this.newGameRound();
+        }
+    }
+
+    newGameRound() {
+        this.order = this.roundDifficulty();
+        this.timer = new Timer(this.numSeconds, this.roundStatus.bind(this));
+        this.customer = new Customer();
+        this.timerStart();
+    }
+
+    roundDifficulty () {
+        this.order = null;
+        if (this.checkTotalCustomers() >= 100) {
+            this.numSeconds = 2
+        } else if (this.checkTotalCustomers() >= 50) {
+            this.numSeconds = 3
+        } else if (this.checkTotalCustomers() >= 40) {
+            this.numSeconds = 4
+        } else if (this.checkTotalCustomers() >= 30) {
+            this.numSeconds = 5
+        } else if (this.checkTotalCustomers() >= 15) {
+            this.numSeconds = 6
+        } else if (this.checkTotalCustomers() >= 10) {
+            this.numSeconds = 8
+        } else if (this.checkTotalCustomers() >= 6) {
+            this.numSeconds = 10
+        } else if (this.checkTotalCustomers() >= 3) {
+            this.numSeconds = 15
+        } else if (this.checkTotalCustomers() >= 0) {
+            this.numSeconds = 20
+        }
+        return new Order(this.numSeconds);
+    }
+
+```
 - Lose the game when you lose 3 customers
 
 In addition, this project includes:
