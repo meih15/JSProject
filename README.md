@@ -12,6 +12,11 @@
 ## Live
 Play **bobabreak** live [here](https://meih15.github.io/bobabreak/)
 
+## Technologies, Libraries, APIs
+- Javascript
+- NPM and Webpack
+- HTML/CSS
+
 ## Wireframes
 
 ![wireframe](./assets/introduction/wireframe.png)
@@ -19,13 +24,7 @@ Play **bobabreak** live [here](https://meih15.github.io/bobabreak/)
 ![2023-04-05 (6)](https://user-images.githubusercontent.com/117603258/230257430-5942f5be-882f-41a6-801e-97ed28215ddf.png)
 
 
-
-## Technologies, Libraries, APIs
-- Javascript
-- NPM and Webpack
-- HTML/CSS
-
-## Functionality & MVPS
+## Functionality
 
 This project includes:
 - Instructions on how to play
@@ -177,14 +176,6 @@ roundStatus() {
 - Lose the game when you lose 3 customers
 
 
-## Implementation Timeline
-- Friday: Project setup and outlining the game logic
-- Weekend: Complete the game logic functionality
-- Monday: Complete the game interface
-- Tuesday: Include HTML buttons functionality and music options
-- Wednesday: Finish styling, and clean up code
-- Thursday Morning: Deploy to Github pages
-
 ## Future Implementations
 - Add sound to the game
 - Mute any sounds from the game
@@ -200,6 +191,6 @@ https://unblast.com/100-free-cartoon-characters-sketch-figma/ (customers)
 
 https://www.mydraw.com/templates-infographics-tea-types-infographic (tea-flavors)
 
-- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
+Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
 
 
